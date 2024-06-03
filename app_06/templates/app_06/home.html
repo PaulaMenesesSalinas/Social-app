@@ -1,0 +1,10 @@
+{% extends 'app_06/base.html' %}
+{% load static %}
+{% block content %}
+    <h1 class="mt-4">Welcome to our social website</h1>
+    <p>Feel free to post anything</p>
+    <div class="mt-3 d-flex">
+        <a class="btn btn-primary mr-3" href="{% url 'users-list' %}">Users List</a>
+        <a class="btn btn-primary" href="{% url 'posts-list' %}">Posts List</a>
+    </div>
+{% endblock %}

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Posts</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="d-flex flex-column min-vh-100">
+    <div class="container mt-5">
+        <h1>{{ user.username }}'s Posts</h1>
+        <ul class="list-group">
+            {% for post in posts %}
+            <li class="list-group-item">{{ post.post }} - {{ post.visibility }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>

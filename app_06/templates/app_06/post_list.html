@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Posts List</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="d-flex flex-column min-vh-100">
+    <div class="container mt-5">
+        <h2><a href="{% url 'home' %}">Home page</a></h2>
+        <h1>Posts</h1>
+        <ul class="list-group">
+            {% for post in posts %}
+            <li class="list-group-item">
+                <a href="{% url 'post-detail' post_id=post.id %}">{{ post.post }} - {{ post.user.username }} - {{ post.created_at }} - {{ post.visibility }}</a>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>

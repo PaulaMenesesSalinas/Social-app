@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Users List</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="d-flex flex-column min-vh-100">
+    <div class="container mt-5">
+        <h2><a href="{% url 'home' %}">Home page</a></h2>
+        <h1>Users List</h1>
+        <ul class="list-group">
+            {% for user in users %}
+            <li class="list-group-item">
+                <a href="{% url 'user-detail' username=user.username %}">{{ user.username }}</a> joined at {{ user.joined_at }}
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>

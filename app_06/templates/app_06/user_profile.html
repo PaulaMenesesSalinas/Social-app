@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="d-flex flex-column min-vh-100">
+    <div class="container mt-5">
+        <h2><a href="{% url 'home' %}">Home page</a></h2>
+        <h3><a href="{% url 'users-list' %}">Users List</a></h3>
+        <h1>User details</h1>
+        <hr>
+        <p><strong>Username:</strong> {{ user.username|upper }}</p>
+        <p><strong>Email:</strong> {{ user.email }}</p>
+        <p><strong>Bio:</strong> {{ user.bio }}</p>
+        <p><strong>Age:</strong> {{ user.age }}</p>
+        <div class="btn-group" role="group" aria-label="User Actions">
+            <a href="{% url 'user-posts' username=user.username %}" class="btn btn-info mr-3">View {{ user.username }}'s posts</a>
+            <a href="{% url 'create-post' username=user.username %}" class="btn btn-success">Create new post</a>
+        </div>
+    </div>
+</body>
+</html>
+
